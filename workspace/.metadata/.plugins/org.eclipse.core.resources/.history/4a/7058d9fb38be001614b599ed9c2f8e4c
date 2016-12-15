@@ -1,0 +1,153 @@
+package module1.chapter2;
+
+import java.awt.BorderLayout;
+import java.awt.EventQueue;
+
+import javax.swing.JFrame;
+import javax.swing.JPanel;
+import javax.swing.border.EmptyBorder;
+import javax.swing.GroupLayout;
+import javax.swing.GroupLayout.Alignment;
+import javax.swing.JLabel;
+import javax.swing.JTextField;
+import java.awt.Font;
+import javax.swing.LayoutStyle.ComponentPlacement;
+
+public class Bai_24_FrmXuLyStringBuilder extends JFrame {
+
+	private JPanel contentPane;
+	private JTextField textField;
+	private JTextField textField_1;
+	private JTextField textField_2;
+	private JTextField textField_3;
+	private JTextField textField_4;
+	private JTextField textField_5;
+
+	/**
+	 * Launch the application.
+	 */
+	public static void main(String[] args) {
+		EventQueue.invokeLater(new Runnable() {
+			public void run() {
+				try {
+					Bai_24_FrmXuLyStringBuilder frame = new Bai_24_FrmXuLyStringBuilder();
+					frame.setVisible(true);
+				} catch (Exception e) {
+					e.printStackTrace();
+				}
+			}
+		});
+	}
+
+	/**
+	 * Create the frame.
+	 */
+	public Bai_24_FrmXuLyStringBuilder() {
+		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+		setBounds(100, 100, 506, 583);
+		contentPane = new JPanel();
+		contentPane.setBorder(new EmptyBorder(5, 5, 5, 5));
+		setContentPane(contentPane);
+		
+		JLabel lblChuiSb = new JLabel("Chu\u1ED7i sb");
+		lblChuiSb.setFont(new Font("Tahoma", Font.PLAIN, 15));
+		
+		JLabel lblChuiSb_1 = new JLabel("Chu\u1ED7i sb1");
+		lblChuiSb_1.setFont(new Font("Tahoma", Font.PLAIN, 15));
+		
+		JLabel lblChuiSb_2 = new JLabel("Chu\u1ED7i sb2");
+		lblChuiSb_2.setFont(new Font("Tahoma", Font.PLAIN, 15));
+		
+		JLabel lblVTrChn = new JLabel("V\u1ECB tr\u00ED ch\u00E8n");
+		lblVTrChn.setFont(new Font("Tahoma", Font.PLAIN, 15));
+		
+		JLabel lblVTru = new JLabel("V\u1ECB tr\u00ED \u0111\u1EA7u");
+		lblVTru.setFont(new Font("Tahoma", Font.PLAIN, 15));
+		
+		JLabel lblVTrCui = new JLabel("V\u1ECB tr\u00ED cu\u1ED1i");
+		lblVTrCui.setFont(new Font("Tahoma", Font.PLAIN, 15));
+		
+		textField = new JTextField();
+		textField.setFont(new Font("Tahoma", Font.PLAIN, 15));
+		textField.setColumns(10);
+		
+		textField_1 = new JTextField();
+		textField_1.setFont(new Font("Tahoma", Font.PLAIN, 15));
+		textField_1.setColumns(10);
+		
+		textField_2 = new JTextField();
+		textField_2.setFont(new Font("Tahoma", Font.PLAIN, 15));
+		textField_2.setColumns(10);
+		
+		textField_3 = new JTextField();
+		textField_3.setFont(new Font("Tahoma", Font.PLAIN, 15));
+		textField_3.setColumns(10);
+		
+		textField_4 = new JTextField();
+		textField_4.setFont(new Font("Tahoma", Font.PLAIN, 15));
+		textField_4.setColumns(10);
+		
+		textField_5 = new JTextField();
+		textField_5.setFont(new Font("Tahoma", Font.PLAIN, 15));
+		textField_5.setColumns(10);
+		GroupLayout gl_contentPane = new GroupLayout(contentPane);
+		gl_contentPane.setHorizontalGroup(
+			gl_contentPane.createParallelGroup(Alignment.LEADING)
+				.addGroup(gl_contentPane.createSequentialGroup()
+					.addContainerGap(48, Short.MAX_VALUE)
+					.addGroup(gl_contentPane.createParallelGroup(Alignment.LEADING)
+						.addGroup(gl_contentPane.createSequentialGroup()
+							.addComponent(lblVTru)
+							.addGap(62)
+							.addComponent(textField_4, 257, 257, 257))
+						.addGroup(gl_contentPane.createSequentialGroup()
+							.addComponent(lblVTrChn)
+							.addGap(56)
+							.addComponent(textField_3, 257, 257, 257))
+						.addGroup(gl_contentPane.createSequentialGroup()
+							.addGroup(gl_contentPane.createParallelGroup(Alignment.LEADING)
+								.addComponent(lblChuiSb)
+								.addComponent(lblChuiSb_1)
+								.addComponent(lblChuiSb_2)
+								.addComponent(lblVTrCui))
+							.addGap(57)
+							.addGroup(gl_contentPane.createParallelGroup(Alignment.TRAILING)
+								.addGroup(gl_contentPane.createParallelGroup(Alignment.TRAILING, false)
+									.addComponent(textField_2)
+									.addComponent(textField_1)
+									.addComponent(textField, Alignment.LEADING, GroupLayout.DEFAULT_SIZE, 257, Short.MAX_VALUE))
+								.addComponent(textField_5, GroupLayout.PREFERRED_SIZE, 257, GroupLayout.PREFERRED_SIZE))))
+					.addGap(53))
+		);
+		gl_contentPane.setVerticalGroup(
+			gl_contentPane.createParallelGroup(Alignment.LEADING)
+				.addGroup(gl_contentPane.createSequentialGroup()
+					.addGap(48)
+					.addGroup(gl_contentPane.createParallelGroup(Alignment.BASELINE)
+						.addComponent(lblChuiSb)
+						.addComponent(textField, GroupLayout.PREFERRED_SIZE, GroupLayout.DEFAULT_SIZE, GroupLayout.PREFERRED_SIZE))
+					.addGap(28)
+					.addGroup(gl_contentPane.createParallelGroup(Alignment.BASELINE)
+						.addComponent(lblChuiSb_1)
+						.addComponent(textField_1, GroupLayout.PREFERRED_SIZE, GroupLayout.DEFAULT_SIZE, GroupLayout.PREFERRED_SIZE))
+					.addGap(29)
+					.addGroup(gl_contentPane.createParallelGroup(Alignment.BASELINE)
+						.addComponent(lblChuiSb_2)
+						.addComponent(textField_2, GroupLayout.PREFERRED_SIZE, GroupLayout.DEFAULT_SIZE, GroupLayout.PREFERRED_SIZE))
+					.addGap(32)
+					.addGroup(gl_contentPane.createParallelGroup(Alignment.BASELINE)
+						.addComponent(lblVTrChn)
+						.addComponent(textField_3, GroupLayout.PREFERRED_SIZE, GroupLayout.DEFAULT_SIZE, GroupLayout.PREFERRED_SIZE))
+					.addGap(26)
+					.addGroup(gl_contentPane.createParallelGroup(Alignment.BASELINE)
+						.addComponent(lblVTru)
+						.addComponent(textField_4, GroupLayout.PREFERRED_SIZE, GroupLayout.DEFAULT_SIZE, GroupLayout.PREFERRED_SIZE))
+					.addGap(30)
+					.addGroup(gl_contentPane.createParallelGroup(Alignment.BASELINE)
+						.addComponent(lblVTrCui)
+						.addComponent(textField_5, GroupLayout.PREFERRED_SIZE, GroupLayout.DEFAULT_SIZE, GroupLayout.PREFERRED_SIZE))
+					.addContainerGap(183, Short.MAX_VALUE))
+		);
+		contentPane.setLayout(gl_contentPane);
+	}
+}

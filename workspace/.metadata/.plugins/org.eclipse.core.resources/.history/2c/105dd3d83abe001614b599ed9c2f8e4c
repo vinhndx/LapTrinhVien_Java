@@ -1,0 +1,78 @@
+package module1.chapter2;
+
+import java.awt.BorderLayout;
+import java.awt.EventQueue;
+
+import javax.swing.JFrame;
+import javax.swing.JPanel;
+import javax.swing.border.EmptyBorder;
+import javax.swing.GroupLayout;
+import javax.swing.GroupLayout.Alignment;
+import javax.swing.JLabel;
+
+public class Bai_25_FrmTachHoTen extends JFrame {
+
+	private JPanel contentPane;
+
+	/**
+	 * Launch the application.
+	 */
+	public static void main(String[] args) {
+		EventQueue.invokeLater(new Runnable() {
+			public void run() {
+				try {
+					Bai_25_FrmTachHoTen frame = new Bai_25_FrmTachHoTen();
+					frame.setVisible(true);
+				} catch (Exception e) {
+					e.printStackTrace();
+				}
+			}
+		});
+	}
+
+	/**
+	 * Create the frame.
+	 */
+	public Bai_25_FrmTachHoTen() {
+		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+		setBounds(100, 100, 538, 471);
+		contentPane = new JPanel();
+		contentPane.setBorder(new EmptyBorder(5, 5, 5, 5));
+		setContentPane(contentPane);
+		
+		JLabel lblHVTn = new JLabel("H\u1ECD v\u00E0 t\u00EAn");
+		
+		JLabel lblH = new JLabel("H\u1ECD");
+		
+		JLabel lblTnm = new JLabel("T\u00EAn \u0111\u1EC7m");
+		
+		JLabel lblTn = new JLabel("T\u00EAn");
+		GroupLayout gl_contentPane = new GroupLayout(contentPane);
+		gl_contentPane.setHorizontalGroup(
+			gl_contentPane.createParallelGroup(Alignment.LEADING)
+				.addGroup(gl_contentPane.createSequentialGroup()
+					.addGap(55)
+					.addGroup(gl_contentPane.createParallelGroup(Alignment.LEADING)
+						.addComponent(lblTn)
+						.addComponent(lblTnm)
+						.addComponent(lblH)
+						.addComponent(lblHVTn))
+					.addContainerGap(401, Short.MAX_VALUE))
+		);
+		gl_contentPane.setVerticalGroup(
+			gl_contentPane.createParallelGroup(Alignment.LEADING)
+				.addGroup(gl_contentPane.createSequentialGroup()
+					.addGap(53)
+					.addComponent(lblHVTn)
+					.addGap(33)
+					.addComponent(lblH)
+					.addGap(38)
+					.addComponent(lblTnm)
+					.addGap(38)
+					.addComponent(lblTn)
+					.addContainerGap(188, Short.MAX_VALUE))
+		);
+		contentPane.setLayout(gl_contentPane);
+	}
+
+}

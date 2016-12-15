@@ -1,0 +1,144 @@
+package module1.chapter2;
+
+import java.awt.BorderLayout;
+import java.awt.EventQueue;
+
+import javax.swing.JFrame;
+import javax.swing.JPanel;
+import javax.swing.border.EmptyBorder;
+import javax.swing.GroupLayout;
+import javax.swing.GroupLayout.Alignment;
+import javax.swing.JLabel;
+import java.awt.Font;
+import javax.swing.JTextField;
+import javax.swing.JButton;
+import javax.swing.LayoutStyle.ComponentPlacement;
+import java.awt.event.ActionListener;
+import java.awt.event.ActionEvent;
+
+public class Bai_23_FrmTimChuoi extends JFrame {
+
+	private JPanel contentPane;
+	private JTextField txtChuoi1;
+	private JTextField txtChuoi2;
+	private JTextField txtKetQua;
+
+	/**
+	 * Launch the application.
+	 */
+	public static void main(String[] args) {
+		EventQueue.invokeLater(new Runnable() {
+			public void run() {
+				try {
+					Bai_23_FrmTimChuoi frame = new Bai_23_FrmTimChuoi();
+					frame.setVisible(true);
+				} catch (Exception e) {
+					e.printStackTrace();
+				}
+			}
+		});
+	}
+
+	/**
+	 * Create the frame.
+	 */
+	public Bai_23_FrmTimChuoi() {
+		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+		setBounds(100, 100, 565, 397);
+		contentPane = new JPanel();
+		contentPane.setBorder(new EmptyBorder(5, 5, 5, 5));
+		setContentPane(contentPane);
+		
+		JLabel lblTmKimChui = new JLabel("T\u00ECm ki\u1EBFm chu\u1ED7i");
+		lblTmKimChui.setFont(new Font("Dialog", Font.PLAIN, 18));
+		
+		JLabel lblNewLabel = new JLabel("Nh\u1EADp chu\u1ED7i 1");
+		lblNewLabel.setFont(new Font("Dialog", Font.PLAIN, 15));
+		
+		JLabel lblNhpChui = new JLabel("Nh\u1EADp chu\u1ED7i 2");
+		lblNhpChui.setFont(new Font("Dialog", Font.PLAIN, 15));
+		
+		txtChuoi1 = new JTextField();
+		txtChuoi1.setFont(new Font("Tahoma", Font.PLAIN, 15));
+		txtChuoi1.setColumns(10);
+		
+		txtChuoi2 = new JTextField();
+		txtChuoi2.setFont(new Font("Tahoma", Font.PLAIN, 15));
+		txtChuoi2.setColumns(10);
+		
+		JLabel lblKtQu = new JLabel("K\u1EBFt qu\u1EA3");
+		lblKtQu.setFont(new Font("Dialog", Font.PLAIN, 15));
+		
+		txtKetQua = new JTextField();
+		txtKetQua.setFont(new Font("Tahoma", Font.PLAIN, 15));
+		txtKetQua.setColumns(10);
+		
+		JButton btnTimKiem = new JButton("T\u00ECm ki\u1EBFm");
+		btnTimKiem.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent arg0) {
+				String txt1 = txtChuoi1.getText();
+				String txt2 = txtChuoi2.getText();
+				String ketQua = "";
+				if (!txt1.contains(txt2)){
+					ketQua = "Không có";
+				}
+				else{
+					int firstIdx = txt1.indexOf(txt2);
+					System.out.println(firstIdx);
+					int lastIdx = txt1.lastIndexOf(txt2);
+					System.out.println(lastIdx);
+					ketQua = "Chuỗi 1 xuất hiện trong chuỗi 2 từ vị trí " + firstIdx + "đến " + lastIdx;
+				}
+				txtKetQua.setText(ketQua);
+			}
+		});
+		btnTimKiem.setFont(new Font("Tahoma", Font.PLAIN, 15));
+		GroupLayout gl_contentPane = new GroupLayout(contentPane);
+		gl_contentPane.setHorizontalGroup(
+			gl_contentPane.createParallelGroup(Alignment.LEADING)
+				.addGroup(gl_contentPane.createSequentialGroup()
+					.addGroup(gl_contentPane.createParallelGroup(Alignment.LEADING)
+						.addGroup(gl_contentPane.createSequentialGroup()
+							.addGap(129)
+							.addComponent(lblTmKimChui))
+						.addGroup(gl_contentPane.createSequentialGroup()
+							.addGap(43)
+							.addGroup(gl_contentPane.createParallelGroup(Alignment.LEADING)
+								.addComponent(lblNewLabel)
+								.addComponent(lblNhpChui)
+								.addComponent(lblKtQu, GroupLayout.PREFERRED_SIZE, 85, GroupLayout.PREFERRED_SIZE))
+							.addGap(40)
+							.addGroup(gl_contentPane.createParallelGroup(Alignment.LEADING)
+								.addComponent(txtKetQua, GroupLayout.PREFERRED_SIZE, 186, GroupLayout.PREFERRED_SIZE)
+								.addGroup(gl_contentPane.createParallelGroup(Alignment.LEADING, false)
+									.addComponent(txtChuoi2)
+									.addComponent(txtChuoi1, GroupLayout.DEFAULT_SIZE, 186, Short.MAX_VALUE))))
+						.addGroup(gl_contentPane.createSequentialGroup()
+							.addGap(185)
+							.addComponent(btnTimKiem)))
+					.addContainerGap(183, Short.MAX_VALUE))
+		);
+		gl_contentPane.setVerticalGroup(
+			gl_contentPane.createParallelGroup(Alignment.LEADING)
+				.addGroup(gl_contentPane.createSequentialGroup()
+					.addGap(44)
+					.addComponent(lblTmKimChui)
+					.addGap(34)
+					.addGroup(gl_contentPane.createParallelGroup(Alignment.BASELINE)
+						.addComponent(lblNewLabel)
+						.addComponent(txtChuoi1, GroupLayout.PREFERRED_SIZE, GroupLayout.DEFAULT_SIZE, GroupLayout.PREFERRED_SIZE))
+					.addGap(30)
+					.addGroup(gl_contentPane.createParallelGroup(Alignment.BASELINE)
+						.addComponent(lblNhpChui)
+						.addComponent(txtChuoi2, GroupLayout.PREFERRED_SIZE, GroupLayout.DEFAULT_SIZE, GroupLayout.PREFERRED_SIZE))
+					.addGap(37)
+					.addGroup(gl_contentPane.createParallelGroup(Alignment.BASELINE)
+						.addComponent(lblKtQu, GroupLayout.PREFERRED_SIZE, 20, GroupLayout.PREFERRED_SIZE)
+						.addComponent(txtKetQua, GroupLayout.PREFERRED_SIZE, 25, GroupLayout.PREFERRED_SIZE))
+					.addPreferredGap(ComponentPlacement.RELATED, 43, Short.MAX_VALUE)
+					.addComponent(btnTimKiem)
+					.addGap(28))
+		);
+		contentPane.setLayout(gl_contentPane);
+	}
+}
